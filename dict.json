@@ -1,0 +1,18 @@
+{
+    "label_emoji": {
+        "en": "Emoji's you want to use as favicons",
+        "ja": "ファビコンとして使いたい絵文字"
+    },
+    "btn_apply": {
+        "en": "Aplly!",
+        "ja": "設定！"
+    },
+    "header_title": {
+        "en": "Emoji favicon bookmark maker",
+        "ja": "Emoji favicon bookmark maker"
+    },
+    "label_usage": {
+        "en": "<p>You can change the favicon of this page to any emoji.</p><p>You can bookmark this page and use it as a favicon for your bookmarklet.</p><p>Each time you change the favicon, the URL changes, so you can register it continuously.</p>",
+        "ja": "<p>このページのファビコンを任意の絵文字に変更できます。</p><p>このページをブックマークして、ブックマークレットのファビコンにできます。</p><p>ファビコンを変更するたびにURLが変わるので、連続して登録することができます。</p>"
+    }
+}
