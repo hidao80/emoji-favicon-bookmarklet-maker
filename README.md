@@ -1,4 +1,4 @@
-# emoji-favicon-bookmark
+# emoji-favicon-bookmarklet-maker
 
 [Web app page](https://hidao80.github.io/emoji-favicon-bookmark/)
 
