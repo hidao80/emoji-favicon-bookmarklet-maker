@@ -19,7 +19,7 @@ window.onload = () => {
         const emoji = $('#emoji').value;
         emoji2PngDataUrl(emoji)
         .then(pngDataUrl => {
-            const script = encodeURIComponent($('textarea').value);
+            const script = encodeURIComponent($('#script').value.trim());
             downloadHtmlForImport(pngDataUrl, script);
         });
     });
@@ -75,9 +75,8 @@ function emoji2PngDataUrl(emoji) {
 function downloadHtmlForImport(pngDataUrl, script) {
     const filename = "import_bookmarklet.html";
     const name = $('#script_name').value;
-    const miniScript = (new LesserJs()).minify(script);
     const a = document.createElement("a");
-    a.href = html2DaraUrl(getOutputHTML(name, pngDataUrl, miniScript));
+    a.href = html2DaraUrl(getOutputHTML(name, pngDataUrl, script));
     a.download = filename;
     a.click();
 }
