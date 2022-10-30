@@ -4,7 +4,7 @@
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/8155294/198865499-061854f2-e481-416e-9557-f2f925ff43f1.png)
+![image](https://user-images.githubusercontent.com/8155294/198865666-bc42f116-2715-4fee-aa2d-d0c0856901fb.png)
 
 ## Usage
 
