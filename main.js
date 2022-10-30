@@ -1,3 +1,5 @@
+"use-strict";
+
 /**
  * Processing when DOM loading is complete
  */
@@ -73,7 +75,7 @@ function emoji2PngDataUrl(emoji) {
 function downloadHtmlForImport(pngDataUrl, script) {
     const filename = "import_bookmarklet.html";
     const name = $('#script_name').value;
-    const miniScript = minify(script);
+    const miniScript = (new LesserJs()).minify(script);
     const a = document.createElement("a");
     a.href = html2DaraUrl(getOutputHTML(name, pngDataUrl, miniScript));
     a.download = filename;
