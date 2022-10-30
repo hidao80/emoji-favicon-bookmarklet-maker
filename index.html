@@ -14,6 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/glottologist"></script>
+    <script src="lesser-js-minify.js"></script>
+    <script src="main.js"></script>
 </head>
 
 <body class="vh-100">
@@ -26,56 +28,39 @@
         <div class="container h-100 d-flex align-items-center justify-content-center">
             <div>
                 <div class="p-4" glot-model="label_usage">
-                    <p>You can change the favicon of this page to any emoji.</p>
-                    <p>You can bookmark this page and use it as a favicon for your bookmarklet.</p>
-                    <p>Each time you change the favicon, the URL changes, so you can register it continuously.</p>
+                    <p>Enter the pictograms you want to make into favicons and the JavaScript you want to make into bookmarklets, then click the download button.</p>
+                    <p>An HTML file for bookmark import will be downloaded, so please import it with your browser.</p>
                 </div>
                 <div class="p-4">
                     <div class="col-auto">
                         <label for="emoji" class="form-label" glot-model="label_emoji">Emoji's you want to use as
                             favicons</label>
-                        <input type="text" class="form-control" id="emoji">
+                        <input type="search" class="form-control" id="emoji">
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="col-auto">
-                        <button class="btn btn-primary" glot-model="btn_apply">applay</button>
+                        <label for="script_name" class="form-label" glot-model="label_script_name">Bookmarklet Name</label>
+                        <input type="search" class="form-control" id="script_name">
                     </div>
+                </div>
+                <div class="p-4">
+                    <div class="col-auto">
+                        <label for="script" class="form-label" glot-model="label_script">JavaScript to make a bookmarklet</label>
+                        <textarea class="form-control" id="script"></textarea> 
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="col-auto">
+                        <button class="btn btn-primary" glot-model="btn_donwload">Download</button>
+                    </div>
+                </div>
+                <div>
+                    <canvas class="d-none"></canvas>
                 </div>
             </div>
         </div>
     </main>
-    <script>
-        // Replacing Strings with i18n Libraries
-        const glot = new Glottologist();
-        glot.import("dict.json").then(() => {
-            glot.render();
-        });
-
-        // Fake jQuery
-        function $(selector) {
-            const elems = document.querySelectorAll(selector);
-            return elems.length == 1 ? elems[0] : elems;
-        }
-
-        // Set the favicon to the emoji entered
-        // when the apply button is clicked.
-        $('button').addEventListener('click', e => {
-            const emoji = $('#emoji').value;
-            $('[rel=icon]').setAttribute('href', `data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>${emoji}</text></svg>`);
-
-            // Change the URL to allow consecutive registrations.
-            history.replaceState(null, null, '?' + (new Date).getTime());
-        });
-
-        // When the enter key is entered in the input field,
-        // the movement is the same as when the apply button is clicked.
-        $('#emoji').addEventListener('keypress', e => {
-            if (e.code == 'Enter') {
-                $('button').click();
-            }
-        });
-    </script>
 </body>
 
 </html>
