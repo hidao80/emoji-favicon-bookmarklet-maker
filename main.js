@@ -15,25 +15,15 @@ window.onload = () => {
 
     // When the download button is clicked,
     // it outputs an HTML file that can import a bookmarklet with favicon set.
-    $('button').addEventListener('click', e => {
-        const emoji = $('#emoji').value;
-        emoji2PngDataUrl(emoji)
+    $('form').addEventListener('submit', e => {
+        e.preventDefault();
+        emoji2PngDataUrl($('#emoji').value.trim())
         .then(pngDataUrl => {
+            console.log(pngDataUrl);
             const script = encodeURIComponent($('#script').value.trim());
             downloadHtmlForImport(pngDataUrl, script);
-        });
+        });    
     });
-
-    function inputEnter(e) {
-        if (e.code == 'Enter') {
-            $('button').click();
-        }
-    }
-
-    // When the enter key is entered in the input field,
-    // the movement is the same as when the download button is clicked.
-    $('#emoji').addEventListener('keypress', inputEnter);
-    $('#script_name').addEventListener('keypress', inputEnter);
 };
 
 /**

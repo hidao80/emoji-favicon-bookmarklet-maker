@@ -4,8 +4,8 @@
         "ja": "faviconとして使いたい絵文字"
     },
     "label_script": {
-        "en": "JavaScript to make a bookmarklet",
-        "ja": "ブックマークレットにするjavascript"
+        "en": "Minifed javascript to bookmarklet",
+        "ja": "ブックマークレットにするminifyされたjavascript"
     },
     "label_script_name": {
         "en": "Bookmarklet Name",
@@ -26,5 +26,5 @@
     "label_usage": {
         "en": "<p>Enter the emoji you want to make into favicons and the JavaScript you want to make into bookmarklets, then click the download button.</p><p>An HTML file for bookmark import will be downloaded, so please import it with your browser.</p>",
         "ja": "<p>faviconにする絵文字とブックマークレットにしたいJavaScriptを入力してからダウンロードボタンをクリックしてください。</p><p>ブックマークインポート用のHTMLファイルがダウンロードされるので、お使いのブラウザでインポートしてください。</p>"
-    }
+    }    
 }

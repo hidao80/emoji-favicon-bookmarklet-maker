@@ -14,7 +14,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/glottologist"></script>
-    <script src="LesserJs.min.js"></script>
     <script src="main.js"></script>
 </head>
 
@@ -26,7 +25,7 @@
     </header>
     <main class="jumbotron h-75">
         <div class="container h-100 d-flex align-items-center justify-content-center">
-            <div>
+            <form>
                 <div class="p-4" glot-model="label_usage">
                     <p>Enter the pictograms you want to make into favicons and the JavaScript you want to make into bookmarklets, then click the download button.</p>
                     <p>An HTML file for bookmark import will be downloaded, so please import it with your browser.</p>
@@ -35,30 +34,30 @@
                     <div class="col-auto">
                         <label for="emoji" class="form-label" glot-model="label_emoji">Emoji's you want to use as
                             favicons</label>
-                        <input type="search" class="form-control" id="emoji" maxlength="2">
+                        <input type="search" class="form-control" id="emoji" maxlength="2" required pattern="/\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}|\p{Emoji}\uFE0F/gu">
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="col-auto">
                         <label for="script_name" class="form-label" glot-model="label_script_name">Bookmarklet Name</label>
-                        <input type="search" class="form-control" id="script_name">
+                        <input type="search" class="form-control" id="script_name" required>
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="col-auto">
                         <label for="script" class="form-label" glot-model="label_script">JavaScript to make a bookmarklet</label>
-                        <input type="text" class="form-control" id="script">
+                        <input type="search" class="form-control" id="script" required>
                     </div>
                 </div>
                 <div class="p-4">
                     <div class="col-auto">
-                        <button class="btn btn-primary" glot-model="btn_donwload">Download</button>
+                        <button type="submit" class="btn btn-primary" glot-model="btn_donwload">Download</button>
                     </div>
                 </div>
                 <div>
                     <canvas class="d-none"></canvas>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 </body>
