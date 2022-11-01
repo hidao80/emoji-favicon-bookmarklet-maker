@@ -1,5 +1,3 @@
-"use strict";
-
 // Importing a json file will delay drawing, so use assign.
 const dict = {
     "label_emoji": {
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         emoji2PngDataUrl($('#emoji').value.trim())
         .then(pngDataUrl => {
-            console.log(pngDataUrl);
             const script = encodeURIComponent($('#script').value.trim());
             downloadHtmlForImport(pngDataUrl, script);
         });    
